@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Your catchy tagline or blog focus here" />
+    <meta name="author" content="Abhishek" />
+    <meta name="keywords" content="blog - python" />
+    <title>Python Blog Page </title>
+  </head>
+  <body><header align="center" ><h1>Blog Website</h1></header>
+    <br /><br />
+
+    <main>
+  
+
+      <section id="post1">
+            {% for post in posts reversed %}
+          <div class="cards">
+           <a style="text-decoration:none;color:black;" href="/post/{{post.id}}">
+          <h2 align="center">{{post.title}}</h2>
+          <p>{{post.body|truncatewords:20}}</p>
+          <br />
+          <mark>{{post.created_at}}</mark>
+        </a>
+        </div>
+          {% endfor %}
+      </section>
+
+ 
+     
+    <footer>
+      <p align="center">
+        &copy; 2024
+        <a href="#home"
+          >Infinite Insights : Navigating the Landscape of Creativity.</a
+        >
+        All Rights Reserved.
+      </p>
+    </footer>
+  </body>
+</html>
